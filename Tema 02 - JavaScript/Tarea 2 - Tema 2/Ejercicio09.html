@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--  9.- En una página con una lista, haz que cuando se pase el ratón por los elementos de la misma, estos cambien de color (solo el elemento por el que se está pasando el ratón). Cuando el ratón salga del elemento, volverá a su estado original. -->
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio - 09</title>
+</head>
+
+<body>
+
+    <ul>
+        <li onmouseover="listaDentro(this)" onmouseout="listaFuera(this)">Leche</li>
+        <li onmouseover="listaDentro(this)" onmouseout="listaFuera(this)">Galletas</li>
+        <li onmouseover="listaDentro(this)" onmouseout="listaFuera(this)">Pan</li>
+    </ul>
+
+    <script>
+        function listaDentro(li) {
+            li.style.color = "red";
+            li.style.fontFamily = "courier";
+        }
+
+        function listaFuera(li) {
+            li.style.color = "black";
+            li.style.fontFamily = "Times New Roman";
+        }
+    </script>
+</body>
+
+</html>

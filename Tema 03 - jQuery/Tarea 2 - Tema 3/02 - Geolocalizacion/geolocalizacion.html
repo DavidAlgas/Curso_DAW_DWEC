@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Geolocalizacion</title>
+</head>
+
+<body>
+
+    <div id="mapa"></div>
+    <button onclick="getGeoposition()">Geoposicion</button>
+
+    <script>
+        function getGeoposition() {
+            if (!navigator.geolocation) {
+                alert('tu navegador no soporta geolocalización');
+                return;
+            }
+
+            function onGeoOk(position) {
+                console.log(position);
+                // https://developers.google.com/maps/documentation/staticmaps/?csw=1#URL_Parameters
+                var urlmapa = "http://maps.googleapis.com/maps/api/staticmap?center=" +
+                    position.coords.latitude + "," +
+                    position.coords.longitude +
+                    "&markers=color:red%7Clabel:aquí%7C" +
+                    position.coords.latitude + "," +
+                    position.coords.longitude +
+                    "&zoom=14&size=400x300&sensor=false";
+                var mapa = document.getElementById('mapa');
+                mapa.innerHTML = '<img src="' + urlmapa + '">';
+            }
+
+            function onGeoError(error) {
+                console.log(error);
+            }
+            navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
+
+            //seguimiento de la posición
+            //navigator.geolocation.wathPosition(function(position){...});
+
+        }
+    </script>
+
+</body>
+
+</html>

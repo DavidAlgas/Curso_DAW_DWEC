@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 03 - LocalStorage/WebStorage</title>
+    <script>
+        function contadorClicks() {
+
+            
+            //Comprobamos si contador01 tiene valores si tiene le suma 1 si no lo inicializamos en 1
+            if (localStorage.contador01) {
+                //Sumamos 1, casteando para que sea numero
+                localStorage.contador01 = Number(localStorage.contador01) + 1;
+            } else {
+                localStorage.contador01 = 1;
+            }
+            //Mostramos el valor de contador01
+            document.getElementById("Mostrar1").innerHTML = "LocalStorage: " + localStorage.contador01 + " veces.";
+
+
+            //Comprobamos si contador02 tiene valores si tiene le suma 1 si no lo inicializamos en 1
+            if (sessionStorage.contador02) {
+                sessionStorage.contador02 = Number(sessionStorage.contador02) + 1;
+            } else {
+                sessionStorage.contador02 = 1;
+            }
+            //Mostramos el valor de contador02
+            document.getElementById("Mostrar2").innerHTML = "SessionStorage: " + sessionStorage.contador02 + " veces.";
+        }
+    </script>
+</head>
+
+<body>
+    <p>
+        <button onclick="contadorClicks()" type="button">Pulsar 5</button>
+    </p>
+    <div id="Mostrar1"></div>
+    <div id="Mostrar2"></div>
+</body>
+
+</html>

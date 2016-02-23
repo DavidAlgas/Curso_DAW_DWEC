@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!-- 02c – Desde un prompt en la primera ventana se preguntará el nombre al usuario. Cuando pulsemos el botón, en la segunda ventana, en vez de google, aparecerá “Hola XXX”, donde XXX es el nombre que ha metido en el prompt el usuario. -->
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio - 02c</title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        var nombre = prompt("Nombre: ");
+
+        var ventana = window.open("", nombre, "top=250, left=600, width=200, height=200");
+        ventana.document.write("Hola "+ventana.name);
+    </script>
+</body>
+
+</html>

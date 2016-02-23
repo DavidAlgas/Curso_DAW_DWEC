@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!-- 07b – Crea una página con una caja de texto y un iframe (o un frame). En la caja de texto se introducirá una url válida. Cuando se pulse un botón, se cargará en el iframe la página.
+
+ -- NOTAS --
+El programa funciona con algunas paginas, creo que no funciona con aquellas que tienes protocolo seguro (HTTPS), probar el ejercicio con paginas sin protocolo seguro -->
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio - 07b</title>
+</head>
+
+<body>
+    <label>Llevame a...</label>
+    <input id="url" type="url">
+    <button onclick="cargaIframe()">GO!</button>
+    <br>
+    <br>
+    <iframe id="iFrame" src="" style="width: 90%; height: 300px"></iframe>
+
+    <script>
+        function cargaIframe() {
+            var url = document.getElementById("url").value;
+            window.frames["iFrame"].src = url;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--  04 – Cambiar el estilo de un párrafo accediendo a través de JavaScript a los estilos de una hoja de estilos. (Propiedad className). -->
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio - 04</title>
+    <style>
+        .newStyle {
+            width: 300px;
+            height: 100px;
+            background-color: black;
+            font-size: 25px;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p id="cambiar">Corre Cambiame!!!!!!!!</p>
+
+    <button onclick="myFunction()">Cambiar</button>
+
+    <script>
+        function myFunction() {
+            document.getElementById("cambiar").className = "newStyle";
+        }
+    </script>
+
+</body>
+
+</html>

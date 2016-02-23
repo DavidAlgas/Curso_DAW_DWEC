@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!-- 06c – En una página con una imagen, haz que cuando se pase el ratón por encima de ella si visualice otra imagen. Cuando salga el ratón, se volverá a ver la imagen inicial. -->
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio - 06c</title>
+</head>
+
+<body>
+    <img src="images/number01.png" onmouseover="cambio(this)" onmouseout="original(this)" />
+
+    <script>
+        function original(img) {
+            img.src="images/number01.png";
+        }
+
+        function cambio(img) {
+            img.src="images/number02.png";
+        }
+    </script>
+</body>
+
+</html>

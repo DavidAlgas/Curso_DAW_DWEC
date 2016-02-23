@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--  10. – Haz una página web con 4 imágenes. Por dos botones. Cuando se pulse uno de ellos, todas las imágenes se desplazarán hacia la derecha, cuando se pulse el otro, se desplazarán hacia la izquierda.  -->
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio - 10</title>
+</head>
+
+<body>
+
+    <img id="pos01" src="images/number01.png" alt="img01">
+    <img id="pos02" src="images/number02.png" alt="img02">
+    <img id="pos03" src="images/number03.png" alt="img03">
+    <img id="pos04" src="images/number04.png" alt="img04">
+    <br>
+    <img src="images/izquierda.gif" onclick="btnIzq(this)" alt="izq">
+    <img src="images/derecha.gif" onclick="btnDcha(this)" alt="dcha">
+
+    <script>
+        //Variables Globales
+        var ima1;
+        var ima2;
+        var ima3;
+        var ima4;
+
+        //Metodo para mover las imagenes hacia la izquierda
+        function btnIzq() {
+            buscarSRC();
+
+            document.getElementById("pos01").src = ima2;
+            document.getElementById("pos02").src = ima3;
+            document.getElementById("pos03").src = ima4;
+            document.getElementById("pos04").src = ima1;
+        }
+
+        //Metodo para mover las imagenes a la derecha
+        function btnDcha() {
+            buscarSRC();
+
+            document.getElementById("pos01").src = ima4;
+            document.getElementById("pos02").src = ima1;
+            document.getElementById("pos03").src = ima2;
+            document.getElementById("pos04").src = ima3;
+
+        }
+
+        //Metodo para buscar las rutas de las imagenes
+        function buscarSRC() {
+            ima1 = document.getElementById("pos01").getAttribute("src");
+            ima2 = document.getElementById("pos02").getAttribute("src");
+            ima3 = document.getElementById("pos03").getAttribute("src");
+            ima4 = document.getElementById("pos04").getAttribute("src");
+        }
+    </script>
+</body>
+
+</html>

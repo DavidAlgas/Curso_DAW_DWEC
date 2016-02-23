@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 04 - Ajax</title>
+    <script src="libraries/jquery-1.10.2.js"></script>
+    <script src="libraries/jquery-1.8.2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("input:submit").click(function (evento) {
+                $.ajaxSetup({
+                    cache: false
+                });
+
+                evento.preventDefault();
+                
+                miNombre = $("#nombre").val();
+                miEdad = $("#edad").val();
+
+                $.ajax({
+                    url: "pages/recibe-parametros-get.php",
+                    type: "GET",
+                    data: {
+                        nombre: miNombre,
+                        edad: miEdad
+                    },
+                    success: function (respuesta) {
+                        $("#Datos").html(respuesta);
+                    },
+                    error: function () {
+                        $("#Datos").html("Un fallo ocurrio");
+                    }
+                });
+            });
+        })
+    </script>
+
+</head>
+
+<body>
+    <form action="pages/recibe-parametros-get.php" method="GET">
+        Nombre:
+        <br>
+        <input name="nombre" id="nombre" type="text"></input>
+        <br> Edad:
+        <br>
+        <input name="edad" id="edad" type="text"></input>
+        <br>
+        <br>
+        <input type="submit">
+    </form>
+    <br>
+    <div id="Datos"></div>
+</body>
+
+</html>

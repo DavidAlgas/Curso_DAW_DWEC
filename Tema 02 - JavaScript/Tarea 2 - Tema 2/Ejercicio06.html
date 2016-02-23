@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- 06 – Crea una página con 4 imágenes. Cuando se pulse un botón se redimensionarán todas las imágenes a 120 x 120. -->
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio - 06</title>
+    <style>
+        .resize {
+            width: 120px;
+            height: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="resize()">Redimensionar</button>
+    <br>
+    <br>
+
+    <img id="imagen1" src="images/number01.png" alt="numero01">
+    <img id="imagen2" src="images/number02.png" alt="numero02">
+    <img id="imagen3" src="images/number03.png" alt="numero03">
+    <img id="imagen4" src="images/number04.png" alt="numero04">
+
+    <script>
+        function resize() {
+            document.getElementById("imagen1").className = "resize";
+            document.getElementById("imagen2").className = "resize";
+            document.getElementById("imagen3").className = "resize";
+            document.getElementById("imagen4").className = "resize";
+        }
+    </script>
+</body>
+
+</html>

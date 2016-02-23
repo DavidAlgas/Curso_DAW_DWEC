@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 6 - jQuery</title>
+    <script src="libraries/jquery-1.10.2.js"></script>
+    <script src="libraries/jquery-1.8.2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn").click(function () {
+                alert("Hacemos Click!");
+            });
+
+            $("#btn").hover(function () {
+                alert("Entro!");
+            }, function () {
+                alert("Salgo!");
+            });
+        });
+    </script>
+
+    <body>
+        <button id="btn">Botón</button>
+    </body>
+
+</html>

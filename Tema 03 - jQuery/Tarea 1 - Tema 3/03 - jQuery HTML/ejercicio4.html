@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 4 - jQuery</title>
+    <script src="libraries/jquery-1.10.2.js"></script>
+    <script src="libraries/jquery-1.8.2.min.js"></script>
+    <style>
+        label {
+            display: block;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+
+            $("input:radio").click(function () {
+
+                if ($(this).prop("value") == "No") {
+
+                    $("input:checkbox").prop({
+                        "disabled": true,
+                        "checked": false
+                    });
+                } else {
+                    $("input:checkbox").prop({
+                        "disabled": false
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <form>
+        <p>¿Te gustan los deportes?</p>
+        <label>
+            <input name="gustos" value="Si" type="radio" />Si</label>
+        <label>
+            <input name="gustos" value="No" type="radio" />No</label>
+        <label>Selecciona tus deportes favoritos:</label>
+        <label>
+            <input name="intereses" value="Futbol" type="checkbox" />Futbol</label>
+        <label>
+            <input name="intereses" value="Baloncesto" type="checkbox" />Baloncesto</label>
+        <label>
+            <input name="intereses" value="Tenis" type="checkbox" />Tenis</label>
+        <label>
+            <input name="intereses" value="Waterpolo" type="checkbox" /> Waterpolo</label>
+    </form>
+</body>
+
+</html>

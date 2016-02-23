@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 8 - jQuery</title>
+    <script src="libraries/jquery-1.10.2.js"></script>
+    <script src="libraries/jquery-1.8.2.min.js"></script>
+    <style>
+        img {
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            display: block;
+            width: 200px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                crear_efecto();
+            });
+        });
+
+        function crear_efecto() {
+            var right = $("img").offset().right;
+            var left = $(window).width() - 400;
+            $("img").animate({
+                left: left
+            }, 1000);
+            $("img").animate({
+                left: '100px'
+            }, 3000, crear_efecto);
+        }
+    </script>
+</head>
+
+<body>
+    <button>Pulsa aquí</button>
+    <img src="imagenes/logo.png" alt="Logotipo CPIFP Los Enlaces" />
+
+</body>
+
+</html>

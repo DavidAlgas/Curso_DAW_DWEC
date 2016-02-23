@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!-- 7-	Genera una lista (<li>) mediante JavaScript de 100 elementos. El primer elemento de la lista tendrá como texto “100”, el segundo “99”…y así hasta que el último sea “1”. Cada uno de estos elementos será un enlace web a una página (ficticia)  con el mismo nombre que el texto (“100.hml”, “99.html”…”1.html”). -->
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio07 - JS</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        document.write("<ul>");
+        for (var x = 100; x >= 1; x--) {
+            document.write("<li style = list-style:none> <a href = " + "http://" + x + ".html " + "target = " + "_blank" + ">" + x + "</a></li>");
+        }
+        document.write("</ul>");
+    </script>
+
+</body>
+
+</html>

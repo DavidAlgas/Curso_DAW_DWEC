@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicios 3 - Eventos</title>
+    <script src="libraries/jquery-1.10.2.js"></script>
+    <script src="libraries/jquery-1.8.2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("input:submit").click(function (event) {
+                event.preventDefault();
+
+                var producto = $("input:text").val();
+
+                if (producto.length == 0) {
+                    alert("Introduce Algo")
+                } else {
+                    $("ul").append("<li>" + producto + "</li>");
+                }
+            });
+
+            $("ul").on("click", "li", function () {
+                $(this).css("text-decoration", "underline");
+                $(this).css("font-weight", "bold");
+                $(this).css("color", "red");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Lista de la Compra</h1>
+    <form>
+        Introduzca Producto:
+        <input type="text" name="Producto">
+
+        <input type="submit" value="Añadir"> </form>
+    <ul>
+
+    </ul>
+
+</body>
+
+</html>

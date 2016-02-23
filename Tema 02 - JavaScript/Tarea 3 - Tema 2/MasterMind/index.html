@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title> - MasterMind -</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+   <!-- SECCION CONTENEDORA DEL TABLERO -->
+    <section>
+        <table border="2">
+            <tr>
+                <td colspan="2">
+                    <h1>Juego - Mastermind</h1>
+                </td>
+            </tr>
+            <!-- FILA CON LA CONTRASEÑA -->
+            <tr>
+                <td colspan="2">
+                    <label class="PassWord" id="pass0"></label>
+                    <label class="PassWord" id="pass1"></label>
+                    <label class="PassWord" id="pass2"></label>
+                    <label class="PassWord" id="pass3"></label>
+                </td>
+            </tr>
+            <!-- FILA 01 -->
+            <tr>
+                <td>
+                    <label class="Respu" id="0ans0"></label>
+                    <label class="Respu" id="0ans1"></label>
+                    <label class="Respu" id="0ans2"></label>
+                    <label class="Respu" id="0ans3"></label>
+                </td>
+                <td>
+                    <label class="Respu" id="0pista0"></label>
+                    <label class="Respu" id="0pista1"></label>
+                    <label class="Respu" id="0pista2"></label>
+                    <label class="Respu" id="0pista3"></label>
+                </td>
+            </tr>
+            <!-- FILA 02 -->
+            <tr>
+                <td>
+                    <label class="Respu" id="1ans0"></label>
+                    <label class="Respu" id="1ans1"></label>
+                    <label class="Respu" id="1ans2"></label>
+                    <label class="Respu" id="1ans3"></label>
+                </td>
+                <td>
+                    <label class="Respu" id="1pista0"></label>
+                    <label class="Respu" id="1pista1"></label>
+                    <label class="Respu" id="1pista2"></label>
+                    <label class="Respu" id="1pista3"></label>
+                </td>
+            </tr>
+            <!-- FILA 03 -->
+            <tr>
+                <td>
+                    <label class="Respu" id="2ans0"></label>
+                    <label class="Respu" id="2ans1"></label>
+                    <label class="Respu" id="2ans2"></label>
+                    <label class="Respu" id="2ans3"></label>
+                </td>
+                <td>
+                    <label class="Respu" id="2pista0"></label>
+                    <label class="Respu" id="2pista1"></label>
+                    <label class="Respu" id="2pista2"></label>
+                    <label class="Respu" id="2pista3"></label>
+                </td>
+            </tr>
+            <!-- FILA 04 -->
+            <tr>
+                <td>
+                    <label class="Respu" id="3ans0"></label>
+                    <label class="Respu" id="3ans1"></label>
+                    <label class="Respu" id="3ans2"></label>
+                    <label class="Respu" id="3ans3"></label>
+                </td>
+                <td>
+                    <label class="Respu" id="3pista0"></label>
+                    <label class="Respu" id="3pista1"></label>
+                    <label class="Respu" id="3pista2"></label>
+                    <label class="Respu" id="3pista3"></label>
+                </td>
+            </tr>
+            <!-- FILA 05 -->
+            <tr>
+                <td>
+                    <label class="Respu" id="4ans0"></label>
+                    <label class="Respu" id="4ans1"></label>
+                    <label class="Respu" id="4ans2"></label>
+                    <label class="Respu" id="4ans3"></label>
+                </td>
+                <td>
+                    <label class="Respu" id="4pista0"></label>
+                    <label class="Respu" id="4pista1"></label>
+                    <label class="Respu" id="4pista2"></label>
+                    <label class="Respu" id="4pista3"></label>
+                </td>
+            </tr>
+            <!-- FILA 06 -->
+            <tr>
+                <td>
+                    <label class="Respu" id="5ans0"></label>
+                    <label class="Respu" id="5ans1"></label>
+                    <label class="Respu" id="5ans2"></label>
+                    <label class="Respu" id="5ans3"></label>
+                </td>
+                <td>
+                    <label class="Respu" id="5pista0"></label>
+                    <label class="Respu" id="5pista1"></label>
+                    <label class="Respu" id="5pista2"></label>
+                    <label class="Respu" id="5pista3"></label>
+                </td>
+            </tr>
+            <!-- FILA 07 -->
+            <tr>
+                <td>
+                    <label class="Respu" id="6ans0"></label>
+                    <label class="Respu" id="6ans1"></label>
+                    <label class="Respu" id="6ans2"></label>
+                    <label class="Respu" id="6ans3"></label>
+                </td>
+                <td>
+                    <label class="Respu" id="6pista0"></label>
+                    <label class="Respu" id="6pista1"></label>
+                    <label class="Respu" id="6pista2"></label>
+                    <label class="Respu" id="6pista3"></label>
+                </td>
+            </tr>
+        </table>
+        <br>
+    </section>
+
+    <!-- SECCION CONTENEDORA DE LOS OPCIONES -->
+    <section>
+        <button id="colo01" type="button" onclick="Pulsar(0)"></button>
+        <button id="colo02" type="button" onclick="Pulsar(1)"></button>
+        <button id="colo03" type="button" onclick="Pulsar(2)"></button>
+        <button id="colo04" type="button" onclick="Pulsar(3)"></button>
+        <br>
+        <br>
+        <button type="button" onclick="Reload()">New Games</button>
+        <button id="btn02" type="button" onclick="verRespuesta()">Ver Solucion</button>
+    </section>
+
+    <script type="text/javascript" src="masterMind.js"></script>
+</body>
+
+</html>

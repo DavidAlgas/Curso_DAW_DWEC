@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 05 - Ajax</title>
+    <script src="libraries/jquery-1.10.2.js"></script>
+    <script src="libraries/jquery-1.8.2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#boton").click(function () {
+
+                var imagenCarga = "<img src='imagenes/load.gif' alt='cargando...' />";
+                var URLpagina = "pages/pagina-lenta.php";
+                
+                $("#pantalla").html(imagenCarga).load(URLpagina);
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <button id="boton" type="button">Pulsar 3</button>
+    <br>
+    <div id="pantalla"></div>
+</body>
+
+</html>

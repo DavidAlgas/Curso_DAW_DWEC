@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!-- 4-	Hacer una página que pregunte al usuario el nombre y luego lo incluya en un saludo dentro del cuerpo de la página. Si el usuario no rellena el nombre, debe aparecer de nuevo la solicitud. -->
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio04 - JS</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var nombre = "";
+
+        while (nombre.length < 1) {
+            nombre = prompt("Ingrese su Nombre: ", "");
+        }
+        
+        document.write("Bienvenido "+nombre);
+    </script>
+</body>
+
+</html>

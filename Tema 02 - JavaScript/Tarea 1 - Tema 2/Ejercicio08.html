@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!-- 8-	Realiza el juego del ahorcado (un poco “cutre”).  -->
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio08 - JS</title>
+</head>
+
+<body>
+    <h1>- Ahorcado -</h1>
+    <p id="tamaño"></p>
+    <h4 id="huecos"></h4>
+    <div id="imagen"></div>
+    <h4>Letras Introducidas</h4>
+    <p id="introducidas"></p>
+
+    <script>
+        //Variables Globales
+        var letrasPalabra = [];
+        var letrasAcertada = [];
+        var letrasYaInsertadas = [];
+        var fallos = 0;
+
+        //1º Pedimos la palabra Nueva
+        var palabra = prompt("Nueva Palabra: ");
+        palabra = palabra.toUpperCase();
+        document.getElementById("tamaño").innerHTML = "La palabra tiene " + palabra.length + " letras."
+
+
+        //2º La dividimos en letras
+        for (i = 0; i < palabra.length; i++) {
+            letrasPalabra[i] = palabra.charAt(i);
+            letrasAcertada[i] = false;
+        }
+
+
+
+        do {
+            //3 Llenamos los elementos del HTML
+            var resultado = "";
+            var aciertos = 0;
+            llenarHTML();
+
+            //3.4 Comprobar si se ha acertado la palabra
+            if (win() == false) {
+                //3.5 Pedimos una nueva letra
+                var newLetra = prompt("Inserte nueva Letra: ");
+                newLetra = newLetra.toUpperCase();
+
+                //3.6 Comprobamos que sea una letra
+                if (newLetra.length != 1) {
+                    alert("Eso no es una letra");
+                } else {
+
+                    //3.6 Si es una letra comprobamos que no este repetida. Almacenamos la letra si no esta repetida
+                    if (letraRepetida()) {
+                        alert("Ya has introducido la letra " + newLetra)
+                    } else {
+                        letrasYaInsertadas[letrasYaInsertadas.length] = newLetra;
+
+                        //3.7 Comprobamos si la letra esta en la palabra
+                        if (letraValida()) {
+                            alert("Letra Acertada");
+                        } else {
+                            fallos++;
+                            alert("Letra NO Acertada");
+                        }
+                    }
+
+                }
+            }
+        } while (win() == false && fallos < 8);
+
+
+        //Fin del Juego
+        finJuego();
+
+
+
+        //-----------------------------------------------------------------------------------
+        //----------------------------------FUNCIONES----------------------------------------
+        //-----------------------------------------------------------------------------------
+
+        //Metodo para llenar el HTML
+        function llenarHTML() {
+
+            //3.1 Cargamos la Imagen segun los Fallos
+            document.getElementById("imagen").innerHTML = "<img src=\'ahorcado_gif/" + fallos + ".gif'>";
+
+
+            //3.2 Mostramos los espacios de la palabra
+            for (i = 0; i < palabra.length; i++) {
+                if (letrasAcertada[i]) {
+                    aciertos++;
+                    resultado = resultado + "" + letrasPalabra[i];
+                } else {
+                    resultado = resultado + " _ ";
+                }
+            }
+            document.getElementById("huecos").innerHTML = resultado;
+
+
+            //3.3 Mostramos las letras ya introducidas
+            var resultadoL = "";
+
+            for (i = 0; i < letrasYaInsertadas.length; i++) {
+                resultadoL = resultadoL + letrasYaInsertadas[i];
+            }
+
+            document.getElementById("introducidas").innerHTML = resultadoL;
+        }
+
+        //Comprobamos si el jugador ya ha acertado la palabra
+        function win() {
+            var gana = false;
+            if (aciertos == palabra.length) {
+                gana = true;
+            }
+
+            return gana;
+        }
+
+        //Comprobamos si la letra ya ha sido introducida
+        function letraRepetida() {
+            var repetida = false;
+            for (i = 0; i < letrasYaInsertadas.length; i++) {
+                if (newLetra == letrasYaInsertadas[i]) {
+                    repetida = true;
+                }
+            }
+            return repetida;
+        }
+
+        //Compribamos si la letra esta en la palabra
+        function letraValida() {
+            var letraValida = false;
+            for (i = 0; i < letrasPalabra.length; i++) {
+                if (newLetra == letrasPalabra[i]) {
+                    letrasAcertada[i] = true;
+                    letraValida = true;
+                }
+            }
+
+            return letraValida;
+        }
+
+        //Metodo para controlar el Fin del Juego teniendo en cuenta si hemos ganado o perdido
+        function finJuego() {
+            if (win()) {
+                alert("Has Ganado");
+                var again = confirm("¿Volver a Jugar?");
+                if (again) {
+                    location.reload();
+                } else {
+                    window.close();
+                }
+            } else {
+                document.getElementById("imagen").innerHTML = "<img src=\'ahorcado_gif/8.gif'>";
+                alert("Has Perdido");
+                var again = confirm("¿Volver a Jugar?");
+                if (again) {
+                    location.reload();
+                } else {
+                    window.close();
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- 01a - Haz una web con un párrafo. Mediante JavaScript haz que cuando pasemos el ratón sobre él, cambie el color, tamaño y tipo de letra. -->
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio - 01a</title>
+</head>
+
+<body>
+    <h1 id="frase">Haz una web con un párrafo. Mediante JavaScript haz que cuando pasemos el ratón sobre él, cambie el color, tamaño y tipo de letra.</h1>
+
+    <script type="text/javascript">
+        document.getElementById("frase").onmouseover = function () {
+            ratonDentro()
+        };
+        document.getElementById("frase").onmouseout = function () {
+            ratonFuera()
+        };
+
+        function ratonDentro() {
+            document.getElementById("frase").style.color = "red";
+            document.getElementById("frase").style.fontSize = "50px";
+            document.getElementById("frase").style.fontFamily = "courier";
+        }
+
+        function ratonFuera() {
+            document.getElementById("frase").style.color = "black";
+            document.getElementById("frase").style.fontSize = "32px";
+            document.getElementById("frase").style.fontFamily = "Times New Roman";
+        }
+    </script>
+</body>
+
+</html>

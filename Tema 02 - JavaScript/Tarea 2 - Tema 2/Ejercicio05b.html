@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!--  05b -  Pide el nombre al usuario mediante un prompt. Modifica la página anterior con un script para que ahora ponga “XXX, ¿Cómo estás?” -->
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio - 05b</title>
+</head>
+
+<body>
+    <p id="mensaje">¿Cómo estás?</p>
+
+    <script type="text/javascript">
+        var nombre = prompt(" ¿Como te llamas?: ");
+        var mensa = document.getElementById("mensaje").innerHTML;
+        mensa = nombre + mensa;
+        alert(mensa);
+        document.getElementById("mensaje").innerHTML = mensa;
+    </script>
+</body>
+
+</html>

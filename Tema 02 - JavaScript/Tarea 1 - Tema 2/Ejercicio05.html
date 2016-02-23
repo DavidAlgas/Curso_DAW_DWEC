@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- 5- Piramide de numeros. Las filas impares irán en negrita y las pares en cursiva.-->
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio05 - JS</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        for (var a = 1; a < 51; a++) {
+            for (var b = 0; b < a; b++) {
+                if (a % 2 == 0) {
+                    document.write("<strong>" + a + "</strong>");
+                } else {
+                    document.write("<em>" + a + "</em>");
+                }
+            }
+            document.write("<br>")
+        }
+    </script>
+</body>
+
+</html>

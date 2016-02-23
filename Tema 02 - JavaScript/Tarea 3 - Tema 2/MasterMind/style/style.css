@@ -1,0 +1,45 @@
+#colo01 {
+    background-color: red;
+    padding-top: 20px;
+    padding-left: 20px;
+    border-radius: 25px;
+}
+
+#colo02 {
+    background-color: yellow;
+    padding-top: 20px;
+    padding-left: 20px;
+    border-radius: 25px;
+}
+
+#colo03 {
+    background-color: green;
+    padding-top: 20px;
+    padding-left: 20px;
+    border-radius: 25px;
+}
+
+#colo04 {
+    background-color: blue;
+    padding-top: 20px;
+    padding-left: 20px;
+    border-radius: 25px;
+}
+
+table {
+    text-align: center;
+}
+
+.PassWord {
+    background-color: black;
+    padding-left: 20px;
+    border-radius: 20px;
+    border-style: solid;
+}
+
+.Respu {
+    background-color: grey;
+    padding-left: 20px;
+    border-radius: 20px;
+    border-style: solid;
+}

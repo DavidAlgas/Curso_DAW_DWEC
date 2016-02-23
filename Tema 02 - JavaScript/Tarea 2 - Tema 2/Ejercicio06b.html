@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- 06b – Igual que el anterior pero que se modifique el tamaño al pasar el ratón por encima de ellas y que cuando salga el ratón recuperen su tamaño original. -->
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio - 06b</title>
+</head>
+
+<body>
+
+    <img onmouseover="redimensionar(this)" onmouseout="normal(this)" src="images/number01.png" alt="numero01">
+    <img onmouseover="redimensionar(this)" onmouseout="normal(this)" src="images/number02.png" alt="numero02">
+    <img onmouseover="redimensionar(this)" onmouseout="normal(this)" src="images/number03.png" alt="numero03">
+    <img onmouseover="redimensionar(this)" onmouseout="normal(this)" src="images/number04.png" alt="numero04">
+
+    <script>
+        function redimensionar(img) {
+            img.style.height = "120px";
+            img.style.width = "120px";
+        }
+
+        function normal(img) {
+            img.style.height = "180px";
+            img.style.width = "180px";
+        }
+    </script>
+</body>
+
+</html>

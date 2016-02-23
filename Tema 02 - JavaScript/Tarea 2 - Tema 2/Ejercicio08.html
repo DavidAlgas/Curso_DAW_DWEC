@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- 8.- Crear una lista y un botón de forma que cada vez que pulsemos el botón añadamos a la lista dos elementos más.  -->
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio - 08</title>
+</head>
+
+<body>
+
+    <button onclick="añadirNum()">Añadir Elementos</button>
+
+    <ul id="listaNum">
+        <li>1</li>
+        <li>2</li>
+    </ul>
+
+    <script>
+        function añadirNum() {
+            for (i=0; i<2; i++) {
+                //Guardamos el ultimo elemento de la lista, debemos de Parsearlo a Integer
+                var ultimoNum = document.getElementById("listaNum").lastElementChild.innerHTML;
+                var num = parseInt(ultimoNum, 10);
+
+                //Para Crear un nuevo elemento LI
+                //1º Crear un nodo de LI.
+                var node = document.createElement("li");
+                //2º crear un nodo de texto, sera el texto que se visualizara.
+                var textnode = document.createTextNode(num + 1);
+                //3º Añadir el nodo de texto al nodo LI.
+                node.appendChild(textnode);
+                //4º Añadir el nodo de LI a la lista.
+                document.getElementById("listaNum").appendChild(node);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

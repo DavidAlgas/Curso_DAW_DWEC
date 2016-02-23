@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!-- 1-	Pregunta los siguientes datos al usuario y guárdalos en variables: nombre, edad, altura y casado (true o false) en variables. Muéstralas en la página web con saltos de línea. -->
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio01 - JS</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var nombre;
+        var edad;
+        var altura;
+        var casado;
+
+        nombre = prompt("Ingrese Nombre: ", "");
+        edad = prompt("Ingrese Edad: ", "");
+        altura = prompt("Ingrese Altura: ", "");
+        casado = confirm("¿Casado?: ", "");
+
+        document.write("Nombre: " + nombre + "<br>");
+        document.write("Edad: " + edad + "<br>");
+        document.write("Altura: " + altura + "<br>");
+
+        if (casado == true) {
+            document.write("Estado Sentimental: Casado");
+        } else {
+            document.write("Estado Sentimental: Soltero");
+        }
+    </script>
+</body>
+
+</html>

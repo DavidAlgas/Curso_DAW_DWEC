@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 02 - Cookies II</title>
+    <script src="libraries/js.cookie.js"></script>
+    <script src="libraries/jquery-1.10.2.js"></script>
+    <script src="libraries/jquery-1.8.2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            //Leemos el valor de la cookie
+            var estado = Cookies.get("estadoTexto");
+
+            //Comparamos y realizamos la ultima accion
+            if (estado == "hide") {
+                $("#texto").hide();
+            }
+
+
+            //Eventos para ocultar/mostrar y crear las cookies con el valor adecuado
+            $("#mostrarTexto").click(function () {
+                $("#texto").show("slow");
+                Cookies.set("estadoTexto", "show");
+            });
+
+            $("#ocultarTexto").click(function () {
+                $("#texto").hide("slow");
+                Cookies.set("estadoTexto", "hide");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div>
+        <button id="mostrarTexto" type="button">Mostrar</button>
+        <button id="ocultarTexto" type="button">Ocultar</button>
+    </div>
+    <br>
+    <div id="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam est erat, consequat ut hendrerit a, volutpat vel sem. Curabitur id erat non nunc consequat scelerisque. Vivamus odio ipsum, porttitor a metus eget, eleifend posuere massa. In vel sollicitudin ante. Praesent pellentesque interdum augue. Mauris leo justo, ornare quis nunc vel, cursus interdum justo. Vestibulum tellus neque, venenatis id porta eu, finibus id dolor. Morbi sit amet nisl ex. In iaculis efficitur dapibus. Phasellus sed sagittis enim. Sed cursus non velit sed facilisis. In ut metus tincidunt, luctus turpis at, tempor felis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam vehicula venenatis nulla. Mauris sed est vel nunc lobortis ultrices nec eget tellus. Quisque ultrices hendrerit mi quis ornare. Integer id rutrum elit, a pulvinar urna. Cras tincidunt eleifend vulputate. Nullam nec orci sit amet ante pellentesque facilisis. Praesent sit amet convallis nisl. Pellentesque a cursus velit, non accumsan ligula. Mauris quis arcu nec leo malesuada volutpat. Sed malesuada felis quis nibh semper commodo. Morbi ut sagittis massa. Praesent dapibus sem est, nec tristique ipsum rutrum vitae. Etiam nunc quam, consectetur a tincidunt a, mollis ac risus. Fusce eleifend tincidunt orci sit amet fermentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras tristique nisl sit amet ipsum accumsan, molestie dictum libero sodales. Aliquam venenatis nisl commodo magna porttitor fringilla. Curabitur quis sodales felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu gravida nulla, ac semper ex. Maecenas nec nibh vitae lorem dictum cursus non eget nunc. Nam aliquam, lacus quis porta convallis, orci augue viverra purus, vel imperdiet lorem arcu sed nulla. Aliquam quis quam augue. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eget dignissim dui. Phasellus consequat diam ac neque vulputate pharetra. Duis eu urna vitae eros consectetur vestibulum vitae sit amet tellus. Proin ultrices ac nisl posuere iaculis. Vestibulum tincidunt ornare porttitor. Nunc mollis feugiat purus et vulputate. Fusce eget auctor velit, ut imperdiet urna. Vestibulum fringilla, lacus nec eleifend tincidunt, sapien sapien faucibus elit, scelerisque accumsan sem diam eget turpis. Aliquam accumsan hendrerit lacinia. Phasellus arcu arcu, lobortis et dolor a, congue iaculis magna.</div>
+</body>
+
+</html>

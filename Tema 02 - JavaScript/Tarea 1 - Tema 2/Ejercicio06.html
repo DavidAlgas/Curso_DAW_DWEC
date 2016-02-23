@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- 6-Dibuja la tabla de multiplicar del 1 al 10 (deben mostrarse las celdas de la tabla). -->
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio06 - JS</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        document.write("<table border='1'>");
+        
+        document.write("<tr>");
+        for (var i = 1; i <= 10; i++) {
+            document.write("<td>" + "Tabla del " + i + "</td>");
+        }
+        document.write("</tr>");
+        
+        for (var numero = 1; numero <= 10; numero++) {
+            document.write("<tr>");
+            for (var pos = 1; pos <= 10; pos++) {
+                document.write("<td>" + pos + "x" + numero + "=" + (numero * pos) + "</td>");
+            }
+            document.write("</tr>");
+        }
+
+        document.write("</table>");
+    </script>
+</body>
+
+</html>

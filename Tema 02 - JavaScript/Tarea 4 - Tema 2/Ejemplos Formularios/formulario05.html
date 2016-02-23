@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>Propiedad VALUE de un objeto de tipo texto</title>
+</head>
+
+<body>
+    <h1>Propiedad VALUE de un objeto INPUT de tipo TEXT</h1>
+    <form id="formulario" action="#">
+        <label for="sumando1">Sumando 1: </label>
+        <input type="text" id="sumando1" name="sumando1" value="" size="3">
+        <br>
+        <label for="sumando2">Sumando 2: </label>
+        <input type="text" id="sumando2" name="sumando2" value="" size="3">
+        <br>
+        <label for="resultado">Resultado: </label>
+        <input type="text" id="resultado" name="resultado" value="" size="4">
+        <input type="button" id="boton" value="Sumar" />
+
+    </form>
+
+    <script>
+        window.onload = function () {
+            document.getElementById("boton").onclick = sumar;
+        }
+
+        function sumar() {
+            /*Value devuelve un texto, por lo que habrá que convertirlo a númerol si no concatena en vez de sumar */
+            document.getElementById("resultado").value = parseInt(document.getElementById("sumando1").value) + parseInt(document.getElementById("sumando2").value);
+        }
+    </script>
+</body>
+
+</html>

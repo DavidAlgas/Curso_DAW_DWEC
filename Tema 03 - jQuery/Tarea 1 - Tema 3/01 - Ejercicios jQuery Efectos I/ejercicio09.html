@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Reformas en Zaragoza</title>
+    <script src="libraries/jquery-1.10.2.js"></script>
+    <script src="libraries/jquery-1.8.2.min.js"></script>
+    <style>
+        a img {
+            float: left;
+            margin: 1px;
+        }
+        
+        #imagenes {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -207px;
+            margin-left: -290px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("img").click(function(event){
+                $(this).slideUp();
+                event.preventDefault();
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <div id="imagenes">
+        <a href="index.php"> <img src="imagenes/inicio.gif" /></a>
+        <a href="pisos.html"> <img src="imagenes/pisos.gif" />
+        </a>
+        <a href="cocinas.html"> <img src="imagenes/cocinas.gif" />
+        </a>
+        <a href="banos.html"> <img src="imagenes/baños.gif" />
+        </a>
+        <a href="contactar.html"> <img src="imagenes/contactar.gif" /></a>
+    </div>
+</body>
+
+</html>
